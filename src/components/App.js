@@ -1,7 +1,20 @@
+import { Routes , Route } from 'react-router-dom';
+// import {Navbar, PostDetail, CreatePost, Home} from './index';
+// import App from './App';
+import Navbar from './Navbar';
+import PostDetail from './PostDetail';
+import Home from './Home';
+import CreatePost from './CreatePost';
+
 function App() {
   return (
-    <div className="App">
-      starting react project 
+    <div className="container">
+      <Navbar />
+      <Routes> 
+        <Route path="/" element={<Home />} />
+        <Route path='/post/:postId' element={<PostDetail />} />
+        <Route path='/create-post' element={<CreatePost />} />
+      </Routes> 
     </div>
   );
 }
